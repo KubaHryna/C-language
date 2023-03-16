@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+void zlicz(){
+    static int ile=0;
+    ile++;
+    printf("Funkcja zostala wywolana %d razy\n",ile);
+}
+void wpisz(int a){
+static int suma=0;
+    suma=suma+a;
+    printf("Aktualna suma wczytanych liczb wynosi %d\n",suma);
+}
+
+int main(){
+wpisz(4);
+wpisz(5);
+wpisz(2);
+wpisz(12);
+wpisz(45);
+wpisz(2);
+wpisz(1);
+
+return 0;
+}
