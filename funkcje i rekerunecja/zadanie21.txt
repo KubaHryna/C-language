@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+int funkcja(int n){
+if(n==0){
+    return 1;
+}
+return 2*funkcja(n-1)+5;
+
+
+}
+int funkcja2(int n){
+if(n==0 || n==1){
+    return 1;
+}
+return funkcja2(n-1)+2*funkcja2(n-2)+3;
+
+
+}
+
+
+int main(){
+for(int i=0;i<10;i++){
+    printf("%d ",funkcja(i));
+}
+ printf("\n");
+for(int i=0;i<10;i++){
+    printf("%d ",funkcja2(i));
+}
+return 0;
+}
