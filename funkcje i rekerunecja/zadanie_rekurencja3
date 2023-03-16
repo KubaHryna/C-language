@@ -2,7 +2,13 @@
 #include <stdlib.h>
 int rekurencja(int n){
 if(n<3) return 1;
-
+if(n%3==0){
+    return rekurencja(n-1)+rekurencja(n-2);
+}
+if(n%3==1){
+    return 5*rekurencja(n-1)+4;
+}
+return rekurencja(n-1)+1;
 }
 
 int main(){
