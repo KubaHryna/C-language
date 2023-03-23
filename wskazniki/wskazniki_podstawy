@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+int liczba=505;
+printf("Adres zmiennej to: %p\n\n",&liczba);
+int *wskaznik=&liczba;
+printf("To adres twojego wskaznika: %p\n\n",wskaznik);
+printf("Wskazywana wartosc to: %d",*wskaznik);
+int i=0;
+const int *a=&i; //Mozna zmienic wszystko
+int * const b=&i; // Mozna zmienic wartosci pod adresem, ale nie mozna zmieniæ adresu
+int const * const c=&i; //Nie mozna zmieniæ ani adresu ani zmiennej
+return 0;
+}
