@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+int fun(int x){
+return 3*x;
+}
+int fun2(int y){
+return y*y;
+}
+bool gie(int(*fun)(int x),int(*fun2)(int x),unsigned int n)
+{
+if(fun(n)==fun2(n)){
+        return true;
+}
+else{
+    return false;
+}
+
+}
+int main(){
+
+printf("%d",gie(&fun,&fun2,2));
+
+return 0;
+}
