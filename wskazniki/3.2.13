@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+double fun(int x){
+return 3*x;
+}
+double gie(double(*fun)(int x),int n)
+{
+return fun(n);
+}
+int main(){
+
+printf("%f",gie(&fun,8));
+
+return 0;
+}
