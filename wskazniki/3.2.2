@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+int* adres_min(int *x,int* y){
+if(*x>*y) return y;
+return x;
+}
+
+int main(){
+int a=17;
+int b=9;
+printf("%p",adres_min(&a,&b));
+
+return 0;
+}
