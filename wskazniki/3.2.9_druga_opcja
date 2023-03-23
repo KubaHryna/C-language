@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+ int *rezerwuj(){
+    return malloc(sizeof(int));
+
+}
+
+int main(){
+    int* wsk=rezerwuj();
+printf("%p\n",wsk);
+printf("%d\n",*wsk);
+
+return 0;
+}
