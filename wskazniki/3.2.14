@@ -2,20 +2,22 @@
 #include <stdlib.h>
 #include <stdbool.h>
 int fun(int x){
-return 3*x;
+return x-1;
 }
 int fun2(int y){
-return y*y;
+return (y-1)*(y-1)*(y-1);
 }
 bool gie(int(*fun)(int x),int(*fun2)(int x),unsigned int n)
 {
-if(fun(n)==fun2(n)){
-        return true;
-}
-else{
-    return false;
-}
-
+    int i;
+    for(i=0;i<=n;i++)
+    {
+        if(fun(n)!=fun2(n))
+            {
+                return false;
+            }
+    }
+    return true;
 }
 int main(){
 
