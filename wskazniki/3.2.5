@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+int suma(const int* x,const int* y){
+return *x+*y;
+}
+
+int main(){
+    const int a=17;
+    const b=4;
+    printf("%d",suma(&a,&b));
+
+
+return 0;
+}
