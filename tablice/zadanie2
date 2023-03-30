@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+void wypisz(unsigned int n,int *tab){
+for(int i=0;i<n;i++){
+    printf("%d\t",tab[i]);
+}
+printf("\n");
+}
+int suma(unsigned int n,int *tab){
+int s=0;
+for(int i=0;i<n;i++){
+    s=s+tab[i];
+}
+return s;
+}
+int suma_kwadratow(unsigned int n,int *tab){
+int s=0;
+for(int i=0;i<n;i++){
+    s=s+tab[i]*tab[i];
+}
+return s;
+}
+float srednia(unsigned int n,int *tab){
+float srednia=0;
+for(int i=0;i<n;i++){
+    srednia=srednia+tab[i];
+}
+return (float)(srednia)/n;
+}
+int main(){
+int tab2[]={1,2,4,5,6,-2};
+wypisz(6,tab2);
+printf("Tyle wynosi  suma elementow w twojej tablicy: %d \n",suma(6,tab2));
+printf("Tyle wynosi  suma kwadratow elementow w twojej tablicy: %d \n",suma_kwadratow(6,tab2));
+printf("Tyle wynosi  średnia elementow w twojej tablicy: %f \n",srednia(6,tab2));
+return 0;
+}
