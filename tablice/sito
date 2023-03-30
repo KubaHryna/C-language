@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdbool.h>
+void wypisz(unsigned int n,int *tab){
+for(int i=0;i<n;i++){
+    printf("%d\t",tab[i]);
+}
+printf("\n");
+}
+float srednia_geometryczna(unsigned int n,int *tab){
+float srednia=1;
+for(int i=0;i<n;i++){
+    srednia=srednia*tab[i];
+}
+return (float)pow(srednia,1.0/n);
+
+}
+float srednia_harmoniczna(unsigned int n,int *tab){
+float srednia=0;
+for(int i=0;i<n;i++){
+    srednia=srednia+(1.0/tab[i]);
+}
+return (float)n/srednia;
+}
+void sito(unsigned int n){
+    bool tab[n];
+    for(int i=0;i<n;i++){
+        tab[i]=true;
+    }
+for(int j=2;j<n;j++){
+        for(int k=2*j;k<n;k=k+j){
+            tab[k]=false;
+        }
+    }
+    for(int x=0;x<n;x++){
+        if(tab[x]==true) printf("%d \t",x);
+    }
+    printf("\n");
+    for(int x=n;x>0;x--){
+        if(tab[x]==true){
+        printf("To jest ostatnia liczba pierwsza z przedzialu: %d \t",x);
+        break;
+        }
+    }
+    printf("\n");
+    int licznik=0;
+    for(int x=2;x<n;x++){
+        if(tab[x]==true) licznik++;
+    }
+    printf("Tyle jest liczb pierwszych w podanym przez ciebie przedziale: %d\n",licznik);
+
+}
+
+int main(){
+int tab2[]={7,1,5,2};
+wypisz(4,tab2);
+printf("To jest twoja srednia geometryczna: %f\n",srednia_geometryczna(4,tab2));
+printf("To jest twoja srednia harmoniczna: %f\n",srednia_harmoniczna(4,tab2));
+sito(100);
+return 0;
+}
