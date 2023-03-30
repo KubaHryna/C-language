@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n,int *tab){
+for(int i=0;i<n;i++){
+    printf("%d\t",tab[i]);
+}
+printf("\n");
+}
+int main(){
+int tab[4];
+tab[0]=1;
+tab[1]=4;
+tab[2]=6;
+tab[3]=3;
+wypisz(4,tab);
+int tab2[]={12,5,-15,245,1,2,-208};
+printf("%d\n",sizeof(tab)/sizeof(int));
+wypisz(7,tab2);
+int *tabb=malloc(4*sizeof(int));
+tabb[0]=15;
+tabb[1]=-23;
+tabb[2]=245;
+tabb[3]=12;
+wypisz(4,tabb);
+return 0;
+}
