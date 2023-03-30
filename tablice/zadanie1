@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n,int *tab){
+for(int i=0;i<n;i++){
+    printf("%d\t",tab[i]);
+}
+printf("\n");
+}
+void zeruj(unsigned int n,int *tab){
+for(int i=0;i<n;i++){
+    tab[i]=0;
+}
+printf("\n");
+}
+void indeksowanie(unsigned int n,int *tab){
+for(int i=0;i<n;i++){
+    tab[i]=i;
+}
+printf("\n");
+}
+void podwajanie_wartosci(unsigned int n,int *tab){
+for(int i=0;i<n;i++){
+    tab[i]=tab[i]*2;
+}
+printf("\n");
+}
+void wartosci_bezwzgledne(unsigned int n,int *tab){
+for(int i=0;i<n;i++){
+    if(tab[i]<0){
+        tab[i]=(-tab[i]);
+    }
+}
+printf("\n");
+}
+void podwoj_i_zeruj(unsigned int n,int *tab){
+  int  j=n/2+1;
+for(int i=0;i<=n;i++){
+        if(n%2==0){
+        if(i<(n/2)){
+            tab[i]=tab[i]*2;
+        }
+        else if(j<n){
+            tab[i]=0;
+        }
+        }else{
+        if(i<=(n/2)){
+            tab[i]=tab[i]*2;
+        }
+        else if(j<n){
+            tab[i]=0;
+        }
+
+        }
+
+}
+j++;
+printf("\n");
+}
+int main(){
+int tab2[]={2,5,8,12,9,14,12};
+int tab3[]={-1,-5,-4,-12};
+podwoj_i_zeruj(7,tab2);
+wypisz(7,tab2);
+podwoj_i_zeruj(4,tab3);
+wypisz(4,tab3);
+wartosci_bezwzgledne(4,tab3);
+wypisz(4,tab3);
+podwajanie_wartosci(7,tab2);
+wypisz(7,tab2);
+zeruj(7,tab2);
+wypisz(7,tab2);
+indeksowanie(7,tab2);
+wypisz(7,tab2);
+podwoj_i_zeruj(6,tab2);
+wypisz(6,tab2);
+
+
+return 0;
+}
