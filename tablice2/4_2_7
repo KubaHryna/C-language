@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+void suma(int unsigned n,int *tab1,int *tab2,int *tab3){
+
+for(int i=0;i<n;i++){
+    tab3[i]=tab1[i]+tab2[i];
+}
+for(int i=0;i<n;i++){
+    printf(" %d ",tab3[i]);
+}
+}
+void maxy(int unsigned n,int *tab1,int *tab2,int *tab3){
+
+for(int i=0;i<n;i++){
+    if(tab1[i]>=tab2[i]){
+        tab3[i]=tab1[i];
+    }else{
+        tab3[i]=tab2[i];
+    }
+}
+for(int i=0;i<n;i++){
+    printf(" %d ",tab3[i]);
+}
+}
+void przypisz(int unsigned n,int *tab1,int *tab2,int *tab3){
+int temp;
+for(int i=0;i<n;i++){
+    temp=tab1[i];
+    tab1[i]=tab3[i];
+    tab3[i]=tab2[i];
+    tab2[i]=temp;
+}
+printf("Tablica 1: ");
+for(int i=0;i<n;i++){
+    printf(" %d ",tab1[i]);
+}
+printf("\n");
+printf("Tablica 2: ");
+for(int i=0;i<n;i++){
+    printf(" %d ",tab2[i]);
+}
+printf("\n");
+printf("Tablica 3: ");
+for(int i=0;i<n;i++){
+    printf(" %d ",tab3[i]);
+}
+printf("\n");
+}
+
+int main(){
+int tab[]={5,4,2,7};
+int tab2[]={8,1,9,3};
+int tab3[4];
+suma(4,tab,tab2,tab3);
+printf("\n");
+maxy(4,tab,tab2,tab3);
+printf("\n");
+przypisz(4,tab,tab2,tab3);
+return 0;
+}
