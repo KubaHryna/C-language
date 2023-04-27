@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+int dlugosc(char *napis){
+    int i=0;
+while(napis[i]!=0){
+i++;
+}
+return i;
+}
+void kontatenacja(char* napis1, char* napis2, char* napis3){
+    int i;
+for(i=0;napis1[i]!=0;i++)
+    {
+    napis3[i]=napis1[i];
+    }
+    for(int j=0;napis2[j]!=0;j++,i++)
+        {
+        napis3[i]=napis2[j];
+        }
+napis3[i]=0;
+}
+void zamien_spacje(char* napis){
+for(int i=0;napis[i]!=0;i++){
+    if(napis[i]==32){
+        napis[i]=95;
+    }
+
+}
+return napis;
+}
+void male_na_duze(char* napis){
+int i;
+for(i=0;napis[i]!=0;i++){
+    if(napis[i]>=97&&napis[i]<=122)
+        {
+        napis[i]=napis[i]-32;
+        }
+
+}
+
+}
+void zamiana_cyfr(char* napis){
+int i;
+for(i=0;napis[i]!=0;i++){
+    if(napis[i]>=48&&napis[i]<=56)
+        {
+        napis[i]=napis[i]+1;
+        }
+
+}
+
+}
+void zamiana_9(char* napis){
+int i;
+for(i=0;napis[i]!=0;i++){
+    if(napis[i]>=48&&napis[i]<=57)
+        {
+            napis[i]=napis[i]+1;
+                 if(napis[i]>57){
+                napis[i]=49;
+                napis[i+1]=48;
+                     i+=1;
+                 }
+
+        }
+}
+}
+
+
+
+int main(){
+char napis[80]= "tu chcemy zamienic spacje";
+char napis1[50]="Ala m";
+char napis2[50]="a kota";
+char napis3[50];
+char napis4[50]="Ala MA KoTA i to jest Test DUZYCH LITER";
+char napis5[50]="Drogi sprzet 125 Zł";
+char napis6[50]="Numer alarmowy 999 na karatke ";
+
+zamien_spacje(napis);
+printf("%s \n",napis);
+kontatenacja(napis1,napis2,napis3);
+printf("%s \n",napis3);
+male_na_duze(napis4);
+printf("%s \n",napis4);
+zamiana_cyfr(napis5);
+printf("%s",napis5);
+zamiana_9(napis6);
+printf("%s",napis6);
+
+return 0;
+}
